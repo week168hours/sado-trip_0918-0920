@@ -188,6 +188,32 @@
   }
 </style>
 
+
+<style id="day1-marker-color-unify">
+  .reservation .timeline .item::after {
+    background: var(--orange) !important;
+  }
+</style>
+
+
+<style id="timeline-time-position-fix">
+  .timeline .time {
+    position: relative;
+    left: 10px;
+  }
+</style>
+
+
+<style id="timeline-time-alignment-final">
+  /* Keep the timeline marker fixed at the left while aligning every time label to one vertical start position. */
+  .timeline .item {
+    padding-left: 40px !important;
+  }
+  .timeline .time {
+    position: relative;
+    left: 0;
+  }
+</style>
 </head>
 <body id="top">
 <main class="wrap">
