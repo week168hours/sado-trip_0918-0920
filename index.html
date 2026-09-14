@@ -118,6 +118,76 @@
   .route-map-section .route-map-legend > div { font-size: 14px !important; }
 }
 </style>
+
+<style id="timeline-marker-restore">
+  .timeline .item {
+    position: relative;
+  }
+  .timeline .item::after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 0 4px #fff3df;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .reservation .timeline .item::after {
+    background: var(--blue);
+  }
+</style>
+
+
+<style id="itinerary-color-refresh">
+  /* Three day itinerary cards */
+  .card.day {
+    background: #ffffff !important;
+  }
+
+  /* Sightseeing / activity entries */
+  .timeline .item.sightseeing,
+  .timeline .item.activity,
+  .timeline .item.spot,
+  .timeline .item:has(.name:is(
+    [data-kind="sightseeing"],
+    [data-kind="activity"]
+  )) {
+    background: #eef7ed !important;
+    border-radius: 14px;
+    padding: 10px 12px;
+  }
+
+  /* Known sightseeing/activity entries in the current itinerary */
+  .timeline .item:has(.name) {
+    --spot-bg: transparent;
+  }
+  .timeline .item:has(.name):has(.mapbtn[href*="佐渡金山"]),
+  .timeline .item:has(.name):has(.mapbtn[href*="北沢浮遊選鉱場跡"]),
+  .timeline .item:has(.name):has(.mapbtn[href*="NIPPONIA"]),
+  .timeline .item:has(.name):has(.mapbtn[href*="ゴールドパーク"]),
+  .timeline .item:has(.name):has(.mapbtn[href*="たらい舟"]),
+  .timeline .item:has(.name):has(.mapbtn[href*="尖閣湾"]),
+  .timeline .item:has(.name):has(.mapbtn[href*="トキの森公園"]),
+  .timeline .item:has(.name):has(.mapbtn[href*="加茂湖"]) {
+    background: #eef7ed !important;
+    border-radius: 14px;
+    padding: 10px 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  /* Dining: keep / reinforce the existing warm orange appearance */
+  .timeline .item.food,
+  .timeline .item.dining,
+  .timeline .item:has(.name):has(.mapbtn[href*="蛇の目寿司"]) {
+    background: #fff1dc !important;
+  }
+</style>
+
 </head>
 <body id="top">
 <main class="wrap">
@@ -144,7 +214,7 @@
       <div class="item"><div class="time">13:50頃〜15:20頃</div><div class="name">⛏️ 史跡 佐渡金山</div><div class="detail">目安 75〜90分。初日のメイン。<br><a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=史跡+佐渡金山">📍 Google Mapsで開く</a></div></div>
       <div class="item"><div class="time">15:30頃〜16:00頃</div><div class="name">🏭 国史跡 北沢浮遊選鉱場跡</div><div class="detail">巨大な産業遺構を見学。短時間でも印象的。<br><a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=国史跡+北沢浮遊選鉱場跡">📍 Google Mapsで開く</a></div></div>
       <div class="item food"><div class="time">17:00〜18:30頃</div><div class="name">🍣 蛇の目寿司 佐和田店</div><div class="detail"><span class="badge">予約済み</span>19時のおけさ公演に間に合うよう、18時半までには出発する想定。<br><a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=蛇の目寿司+佐和田店">📍 Google Mapsで開く</a></div></div>
-      <div class="item"><div class="time">19:00〜19:30</div><div class="name">💃 NIPPONIA 佐渡相川金山町</div><div class="detail"><span class="badge">おけさ公演・予約済み</span>メイン棟（清水家）<br><a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=NIPPONIA+佐渡相川金山町+清水家">📍 Google Mapsで開く</a></div></div>
+      <div class="item"><div class="time">19:00〜19:30</div><div class="name">💃 NIPPONIA 佐渡相川金山町メイン棟（清水家）</div><div class="detail"><span class="badge">予約済み</span>おけさミニ公演を鑑賞。<br><a class="mapbtn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=NIPPONIA+佐渡相川金山町+清水家">📍 Google Mapsで開く</a></div></div>
       <div class="item"><div class="time">19:30以降</div><div class="name">🏨 Ryokan浦島へ</div></div>
     </div>
   </section>
